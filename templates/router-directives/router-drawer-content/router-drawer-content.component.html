@@ -1,0 +1,7 @@
+<mat-nav-list *ngIf="(activeMenuItem$ | async) as active">
+    <a [class.selected]="active.title == item.title" mat-list-item *ngFor="let item of drawerItems" (click)="onDrawerButtonTap(item)">
+      <i mat-list-icon [class]="'fa fa-'+item.icon"></i>
+      <h4 mat-line>{{item.title}}</h4>
+      <!-- p mat-line> {{folder.updated | date}} </p -->
+    </a>
+</mat-nav-list>

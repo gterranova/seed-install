@@ -1,0 +1,27 @@
+<form role="form" (ngSubmit)="f.form.valid && submit()" #f="ngForm" novalidate>
+  <h1>
+  User Activate
+  </h1>
+
+<mat-grid-list *ngIf="!providedData" cols="9" rowHeight="75px">
+    <mat-grid-tile [colspan]="7">
+        <mat-form-field class="full-width">
+            <input matInput name="uid" type="text" id="uid" placeholder="Uid" [(ngModel)]="uid" required />
+            <mat-hint>Uid value sent in email</mat-hint>
+        </mat-form-field>
+    </mat-grid-tile>
+</mat-grid-list>  
+
+<mat-grid-list *ngIf="!providedData" cols="9" rowHeight="75px">
+    <mat-grid-tile [colspan]="7">
+        <mat-form-field class="full-width">
+            <input matInput name="token" type="text" id="token" placeholder="Token" [(ngModel)]="token" required />
+            <mat-hint>Token value sent in email</mat-hint>
+        </mat-form-field>
+    </mat-grid-tile>
+</mat-grid-list>  
+
+<mat-error *ngIf="result">{{result}}</mat-error>
+<p></p>
+<button mat-raised-button [disabled]="!canSubmit()" class="mat-primary full-width" type="submit">Activate</button>
+</form>

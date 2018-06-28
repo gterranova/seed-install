@@ -1,0 +1,25 @@
+<ng-container *ngIf="(activeMenuItem$ | async) as active">
+    <mat-toolbar *ngIf="!active.actionBarHidden" fxLayout="row" color="primary">
+        <span>
+            <button #navButton *ngIf="active.navigationAction" mat-icon-button (click)="onNavButtonTap(active, $event)">
+                <mat-icon>{{ active.navigationAction }}</mat-icon>
+            </button>
+            <span>
+                {{ active.title }}
+            </span>
+        </span>
+        <div fxFlex="100%" style="flex-grow: 1"></div>
+        <button mat-icon-button *ngFor="let action of active.actions" (click)="onToolbarButtonTap(action)">
+            <i [class]="'fa fa-'+action.icon"></i>
+        </button>
+        <button *ngIf="toolbarItems.length" mat-icon-button [mat-menu-trigger-for]="menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+    </mat-toolbar>
+    <mat-menu x-position="before" #menu="matMenu">
+        <button *ngFor="let navItem of toolbarItems" mat-menu-item routerLinkActive="selected" (click)="onToolbarButtonTap(navItem)">
+            {{navItem.title}}
+        </button>
+    </mat-menu>
+<ng-container>
+    

@@ -1,0 +1,54 @@
+<form name="form" (ngSubmit)="f.form.valid && submit()" #f="ngForm" novalidate>
+    <!-- Template Header starts -->
+    <h1>
+        {{ isLoggingIn ? 'Login' : 'Sign up' }}
+    </h1>
+    <!-- Template Header ends -->
+
+    <!-- Markup for getting Username starts -->
+    <mat-grid-list cols="9" rowHeight="75px">
+        <mat-grid-tile [colspan]="7">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Email" type="text" name="email" [(ngModel)]="user.email" #email="ngModel" required />
+                <mat-error *ngIf="f.submitted && !email.valid">Email is required</mat-error>
+            </mat-form-field>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <!-- Markup for getting Username ends -->
+
+    <!-- Markup for getting Password starts -->
+    <mat-grid-list cols="9" rowHeight="75px">
+        <mat-grid-tile [colspan]="7">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="user.password" #password="ngModel" required />
+                <mat-error *ngIf="f.submitted && !password.valid">Password is required</mat-error>
+            </mat-form-field>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+    <!-- Markup for getting confirm password starts -->
+    <mat-grid-list *ngIf="!isLoggingIn" cols="9" rowHeight="75px">
+        <mat-grid-tile [colspan]="7">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Confirm password" type="password" name="confirmPassword" [(ngModel)]="user.confirmPassword" #confirmPassword="ngModel" required />
+                <mat-error *ngIf="f.submitted && !confirmPassword.valid">Password is required</mat-error>
+                <mat-hint style="color: red" *ngIf="!canSubmit() && !!user.confirmPassword && !!user.password && !!user.email">Passwords do not match</mat-hint>
+            </mat-form-field>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+    <!-- Markup for getting Password ends -->
+    <mat-error *ngIf="error">{{error}}</mat-error>
+
+    <button mat-raised-button class="mat-primary full-width" [disabled]="loading||!canSubmit()"> 
+        {{ isLoggingIn ? 'Log In' : 'Sign Up' }}
+    </button>
+    <!-- Template Body ends -->
+    <p *ngIf="isLoggingIn" class="mat-button-toggle login-label" (click)="forgotPassword()">
+      <span>Forgot your password?</span>
+    </p>
+    <p class="mat-button-toggle sign-up-label" (click)="toggleForm()">
+      <span>{{ isLoggingIn ? 'Don’t have an account? ' : 'Back to Login' }}</span>
+      <span class="bold">{{ isLoggingIn ? 'Sign up' : '' }}</span>
+    </p>
+</form>

@@ -1,0 +1,36 @@
+{
+  "name": "seed-install",
+  "version": "1.0.0",
+  "description": "A nativescript+ng generator",
+  "main": "index.js",
+  "bin": {
+    "nsx": "./cli.js"
+  },
+  "scripts": {
+    "test": "test",
+    "plop": "plop"
+  },
+  "author": "Gianpaolo Terranova",
+  "license": "MIT",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "fs-extra": "^6.0.1",
+    "globby": "^8.0.1",
+    "jju": "^1.2.0",
+    "lodash": "^4.17.10",
+    "lodash.assign": "^4.2.0",
+    "lodash.contains": "^2.4.3",
+    "lodash.filter": "^4.6.0",
+    "lodash.has": "^4.5.2",
+    "lodash.isempty": "^4.4.0",
+    "lodash.mapvalues": "^4.6.0",
+    "make-dir": "^1.3.0",
+    "marked": "^0.4.0",
+    "marked-terminal": "^3.0.0",
+    "ng-module-editor": "git+https://github.com/gterranova/ng-module-editor.git",
+    "plop": "^2.0.0",
+    "semver": "^4.3.6",
+    "semver-set": "^0.1.1"
+  },
+  "dependencies": {}
+}

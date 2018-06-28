@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+mat-toolbar {
+    justify-content: space-between;
+    vertical-align: middle;
+    height: 56px;
+    max-height: 56px;
+    span {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+  
+mat-toolbar > span > * {
+  vertical-align: middle;
+}
+
+mat-toolbar > button > i {
+  font-size: 20px;
+}
+
+  mat-sidenav-container {
+    position: absolute!important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #eee;    
+  }

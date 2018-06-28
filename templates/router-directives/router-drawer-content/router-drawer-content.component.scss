@@ -1,0 +1,9 @@
+mat-nav-list {
+    min-width: 250px;
+    & > mat-list-item, & > a[mat-list-item] {
+        cursor: pointer;
+        &.selected {
+            background-color: rgba(0, 0, 0, 0.04);
+        }
+    }
+}

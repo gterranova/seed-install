@@ -1,0 +1,5 @@
+{
+    "nsAssets": ["assets/nativescriptApp/**/*", "assets/nativescriptApp/**/.*", "!assets/nativescriptApp/package.inc.json"],
+    "ngAssets": ["assets/angularApp/**/*", "assets/angularApp/**/.*", "!assets/nativescriptApp/package.inc.json"],
+    "commonAssets": ["assets/src/**/*", "assets/src/**/.*", "assets/tsconfig.json" ]
+}

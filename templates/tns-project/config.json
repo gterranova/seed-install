@@ -1,0 +1,9 @@
+{
+    "description": "Blank NS/Angular App",
+    "nsTemplate": "tns-template-blank-ng",
+    "nsAssets": ["assets/nativescriptApp/**/*", "assets/nativescriptApp/**/.*", "!assets/nativescriptApp/package.inc.json"],
+    "ngAssets": ["assets/angularApp/**/*", "assets/angularApp/**/.*"],
+    "commonAssets": ["assets/src/**/*", "assets/src/**/.*", "assets/package.json", "assets/README.md", "assets/references.d.ts", "assets/tsconfig.json" ],
+    "angularVersion": "6.0.0",
+    "extras": ["auth", "material"]
+}

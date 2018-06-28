@@ -1,0 +1,25 @@
+<form role="form" (ngSubmit)="f.form.valid && submit()" #f="ngForm" novalidate>
+  <h1>
+  Change Email
+  </h1>
+
+<mat-grid-list cols="9" rowHeight="75px">
+    <mat-grid-tile [colspan]="7">
+        <mat-form-field class="full-width">
+            <input matInput name="new_email" type="text" id="new_email" placeholder="New Email" [(ngModel)]="new_email" required />
+        </mat-form-field>
+    </mat-grid-tile>
+</mat-grid-list>  
+
+<mat-grid-list cols="9" rowHeight="75px">
+    <mat-grid-tile [colspan]="7">
+        <mat-form-field class="full-width">
+            <input matInput name="current_password" type="password" id="current_password" placeholder="Current Password" [(ngModel)]="current_password" required />
+        </mat-form-field>
+    </mat-grid-tile>
+</mat-grid-list>  
+
+<mat-error *ngIf="result">{{result}}</mat-error>
+<p></p>
+<button mat-raised-button [disabled]="!canSubmit()" class="mat-primary full-width" type="submit">Change</button>
+</form>

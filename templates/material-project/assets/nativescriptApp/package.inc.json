@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "nativescript-ui-sidedrawer": "^4.1.1",
+    "nativescript-ngx-fonticon": "^4.2.0"    
+  }
+}

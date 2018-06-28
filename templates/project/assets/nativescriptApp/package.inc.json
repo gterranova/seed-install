@@ -1,0 +1,40 @@
+{
+  "devDependencies": {
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-debug": "^3.2.0",
+    "gulp-rename": "^1.2.3",
+    "gulp-string-replace": "^0.4.0",
+    "gulp-multi-process": "^1.3.1",
+    "del": "^2.2.2",
+    "@types/jasmine": "^2.8.8"
+  },
+  "scripts": {
+    "lint": "tslint \"app/**/*.ts\"",
+    "prepPhone": "gulp build.Phone",
+    "prepTablet": "gulp build.Default",
+    "prepCLIPhone": "gulp build.cli.Phone",
+    "prepCLITablet": "gulp build.cli.Default",
+    "ios": "npm run prepCLITablet && tns run ios",
+    "ios.phone": "npm run prepCLIPhone && tns run ios",
+    "android": "npm run prepCLITablet && tns run android",
+    "android.live": "npm run prepCLITablet && gulp build.cli.Live",
+    "android.phone": "npm run prepCLIPhone && tns run android",
+    "phone-ios-bundle": "npm run prepPhone && tns prepare ios && npm run start-ios-bundle --uglify",
+    "tablet-ios-bundle": "npm run prepTablet && tns prepare ios && npm run start-ios-bundle --uglify",
+    "build.phone-ios-bundle": "npm run prepPhone && tns prepare ios && npm run build-ios-bundle --uglify",
+    "build.tablet-ios-bundle": "npm run prepTablet && tns prepare ios && npm run build-ios-bundle --uglify",
+    "phone-android-bundle": "npm run prepPhone && tns prepare android && npm run start-android-bundle --uglify",
+    "tablet-android-bundle": "npm run prepTablet && tns prepare android && npm run start-android-bundle --uglify",
+    "build.phone-android-bundle": "npm run prepPhone && tns prepare android && npm run build-android-bundle --uglify",
+    "build.tablet-android-bundle": "npm run prepTablet && tns prepare android && npm run build-android-bundle --uglify",
+    "ns-bundle": "ns-bundle",
+    "livesync": "gulp tns.Livesync",
+    "livesync.phone": "gulp tns.Livesync.Phone",
+    "publish-ios-bundle": "tns run ios --bundle --publish-app",
+    "generate-android-snapshot": "generate-android-snapshot --targetArchs arm,arm64,ia32 --install",
+    "start-android-bundle": "tns run android --bundle",
+    "start-ios-bundle": "tns run ios --bundle",
+    "build-android-bundle": "tns build android --bundle",
+    "build-ios-bundle": "tns build ios --bundle"
+  }
+}
