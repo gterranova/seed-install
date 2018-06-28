@@ -1,0 +1,13 @@
+<FlexboxLayout class="page-content">
+  <StackLayout class="form">
+    <Image class="logo" src="res://logo"></Image>
+    <Label class="header" [text]="app_name"></Label>
+
+    <StackLayout class="input-field">
+      <TextField class="input" hint="Password" secure="true" [(ngModel)]="password" returnKeyType="done"></TextField>
+      <StackLayout class="hr-light"></StackLayout>
+    </StackLayout>
+
+    <Button [disabled]="!canSubmit()" text="Delete" (tap)="submit()" class="btn btn-primary m-t-20"></Button>
+  </StackLayout>
+</FlexboxLayout>

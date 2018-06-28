@@ -92,6 +92,12 @@ module.exports = function (plop) {
                     dest: '{{config.cwd}}/{{project-name}}/{{nativescript-folder}}'
                 },
                 {
+                    type: 'add',
+                    templateFile: 'dot.gitignore',
+                    path: '{{config.cwd}}/{{project-name}}/{{nativescript-folder}}/.gitignore',
+                    skipIfExists: true
+                },
+                {
                     type: 'copy',
                     src: config.ngAssets,
                     basePath: 'assets/angularApp',

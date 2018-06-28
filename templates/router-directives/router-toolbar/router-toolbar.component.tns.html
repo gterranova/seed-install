@@ -1,0 +1,13 @@
+<ng-container *ngIf="active || (activeMenuItem$ | async) as active">
+  <ActionBar #myActionBar [title]="active.title">
+    <ActionItem *ngFor="let action of active.actions" ios.systemIcon="16" ios.position="right" (tap)="onToolbarButtonTap(action)"
+      android.position="actionBar">
+      <Label [text]="'fa-'+action.icon | fonticon" class="fa"></Label>
+    </ActionItem>
+
+    <ActionItem *ngFor="let navItem of toolbarItems" ios.systemIcon="16" ios.position="right" android.position="popup" (tap)="onToolbarButtonTap(navItem)"
+      [text]="navItem.title">
+    </ActionItem>
+    <NavigationButton [icon]="'res://baseline_'+active.navigationAction+'_white_24'" (tap)="onNavButtonTap(active)"></NavigationButton>
+  </ActionBar>
+</ng-container>

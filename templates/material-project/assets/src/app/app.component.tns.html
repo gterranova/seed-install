@@ -1,0 +1,6 @@
+<RadSideDrawer #sidedrawerId [drawerTransition]="sideDrawerTransition">
+    <GridLayout tkDrawerContent rows="auto, *" class="sidedrawer sidedrawer-left">
+        <app-router-drawer-content></app-router-drawer-content>
+    </GridLayout>
+    <page-router-outlet tkMainContent class="page page-content"></page-router-outlet>
+</RadSideDrawer>
