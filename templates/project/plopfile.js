@@ -93,7 +93,7 @@ module.exports = function (plop) {
                 },
                 {
                     type: 'add',
-                    templateFile: 'dot.gitignore',
+                    templateFile: 'assets/nativescriptApp/dot.gitignore',
                     path: '{{config.cwd}}/{{project-name}}/{{nativescript-folder}}/.gitignore',
                     skipIfExists: true
                 },
